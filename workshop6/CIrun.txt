@@ -1,0 +1,542 @@
+Run codacy/codacy-analysis-cli-action@master
+5
+Run echo "CODACY_BASE_URL_OR_DEFAULT=$(if [  ]; then echo ""; else echo "https://api.codacy.com"; fi)" >> $GITHUB_ENV
+12
+Run if [ -n "" ]; then
+28
+/home/runner/work/_temp/cbbf0900-1a3f-4016-9160-39da45fa3703.sh: line 5: [: =: unary operator expected
+29
+Run set -eux
+62
++ '[' '' == true ']'
+63
++ echo 'Skipping GoSec'
+64
+Skipping GoSec
+65
+Run set -eux
+102
++ '[' '' == true ']'
+103
++ echo 'Skipping StaticCheck'
+104
+Skipping StaticCheck
+105
+Run set -eux
+135
++ '[' -n '' ']'
+136
++ echo 'Skipping Clang Tidy'
+137
+Skipping Clang Tidy
+138
+Run set -eux
+168
++ '[' -n '' ']'
+169
++ echo 'Skipping Faux Pas'
+170
+Skipping Faux Pas
+171
+Run echo "CODACY_ANALYSIS_CLI_VERSION=7.6.4" >> $GITHUB_ENV
+180
+Run echo "CLI_SCRIPT_PATH=/home/runner/work/_actions/codacy/codacy-analysis-cli-action/master/codacy-analysis-cli.sh" >> $GITHUB_ENV
+190
+Run wget -O - https://raw.githubusercontent.com/codacy/codacy-analysis-cli/7.6.4/bin/codacy-analysis-cli.sh > 
+/home/runner/work/_actions/codacy/codacy-analysis-cli-action/master/codacy-analysis-cli.sh
+201
+--2022-10-11 00:14:04--  https://raw.githubusercontent.com/codacy/codacy-analysis-cli/7.6.4/bin/codacy-analysis-cli.sh
+202
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+203
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+204
+HTTP request sent, awaiting response... 200 OK
+205
+Length: 3107 (3.0K) [text/plain]
+206
+Saving to: ‘STDOUT’
+207
+
+208
+     0K ...                                                   100% 41.7M=0s
+209
+
+210
+2022-10-11 00:14:05 (41.7 MB/s) - written to stdout [3107/3107]
+211
+
+212
+Run chmod +x /home/runner/work/_actions/codacy/codacy-analysis-cli-action/master/codacy-analysis-cli.sh
+223
+Run if [ "true" == "true" ]; then
+260
+Unable to find image 'codacy/codacy-analysis-cli:7.6.4' locally
+261
+7.6.4: Pulling from codacy/codacy-analysis-cli
+262
+df9b9388f04a: Already exists
+263
+8cd6bd738ccf: Pulling fs layer
+264
+d9819bf6652c: Pulling fs layer
+265
+2085f74facc6: Pulling fs layer
+266
+d9819bf6652c: Verifying Checksum
+267
+d9819bf6652c: Download complete
+268
+2085f74facc6: Verifying Checksum
+269
+2085f74facc6: Download complete
+270
+8cd6bd738ccf: Verifying Checksum
+271
+8cd6bd738ccf: Download complete
+272
+8cd6bd738ccf: Pull complete
+273
+d9819bf6652c: Pull complete
+274
+2085f74facc6: Pull complete
+275
+Digest: sha256:9f5a65cae122f10c995dcd157d1b71702d4bad9396c2a53d5a788ccbad9f3891
+276
+Status: Downloaded newer image for codacy/codacy-analysis-cli:7.6.4
+277
+Starting analysis ...
+278
+Found [Warning] `[no-undefined-references] Found reference to undefined definition` in IST_REVIEWS.md:11 (remark-lint-no-undefined-references)
+279
+Found [Warning] `[no-undefined-references] Found reference to undefined definition` in IST_REVIEWS.md:23 (remark-lint-no-undefined-references)
+280
+Found [Warning] `[no-undefined-references] Found reference to undefined definition` in IST_REVIEWS.md:27 (remark-lint-no-undefined-references)
+281
+Found [Warning] `[no-undefined-references] Found reference to undefined definition` in ICSME_REVIEWS.md:114 (remark-lint-no-undefined-references)
+282
+Found [Warning] `[no-undefined-references] Found reference to undefined definition` in ICSME_REVIEWS.md:77 (remark-lint-no-undefined-references)
+283
+Found [Warning] `[no-undefined-references] Found reference to undefined definition` in ICSME_REVIEWS.md:75 (remark-lint-no-undefined-references)
+284
+Found [Warning] `[no-undefined-references] Found reference to undefined definition` in IST_REVIEWS.md:9 (remark-lint-no-undefined-references)
+285
+Found [Warning] `[no-undefined-references] Found reference to undefined definition` in ICSME_REVIEWS.md:112 (remark-lint-no-undefined-references)
+286
+Found [Warning] `[no-undefined-references] Found reference to undefined definition` in ICSME_REVIEWS.md:89 (remark-lint-no-undefined-references)
+287
+Found [Warning] `[no-undefined-references] Found reference to undefined definition` in IST_REVIEWS.md:29 (remark-lint-no-undefined-references)
+288
+Found [Info] `Expected: 1; Actual: 2` in IST_REVIEWS.md:31 (markdownlint_MD012)
+289
+Found [Info] `Expected: 80; Actual: 307` in literature_review.md:66 (markdownlint_MD013)
+290
+Found [Info] `Expected: 80; Actual: 548` in ICSME_REVIEWS.md:75 (markdownlint_MD013)
+291
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:95 (markdownlint_MD022)
+292
+Found [Info] `Expected: 0 or 2; Actual: 1` in README.md:3 (markdownlint_MD009)
+293
+Found [Info] `Expected: 1; Actual: 5` in literature_review.md:141 (markdownlint_MD012)
+294
+Found [Info] `Expected: 80; Actual: 165` in LANGETI.REVIEWS.md:103 (markdownlint_MD013)
+295
+Found [Info] `Bare URL used` in IST_REVIEWS.md:27 (markdownlint_MD034)
+296
+Found [Info] `Expected: 80; Actual: 155` in IST_REVIEWS.md:13 (markdownlint_MD013)
+297
+Found [Info] `Expected: 80; Actual: 711` in IST_REVIEWS.md:19 (markdownlint_MD013)
+298
+Found [Info] `Expected: 1; Actual: 2` in literature_review.md:24 (markdownlint_MD012)
+299
+Found [Info] `Expected: 80; Actual: 345` in ICSME_REVIEWS.md:13 (markdownlint_MD013)
+300
+Found [Info] `Expected: 80; Actual: 501` in ICSME_REVIEWS.md:65 (markdownlint_MD013)
+301
+Found [Info] `Expected: 80; Actual: 497` in IST_REVIEWS.md:33 (markdownlint_MD013)
+302
+Found [Info] `Fenced code blocks should have a language specified` in literature_review.md:55 (markdownlint_MD040)
+303
+Found [Info] `Expected: 0 or 2; Actual: 1` in literature_review.md:136 (markdownlint_MD009)
+304
+Found [Info] `Expected: 0 or 2; Actual: 1` in literature_review.md:105 (markdownlint_MD009)
+305
+Found [Info] `Expected: 80; Actual: 284` in LANGETI.REVIEWS.md:138 (markdownlint_MD013)
+306
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:83 (markdownlint_MD031)
+307
+Found [Info] `Expected: 80; Actual: 282` in literature_review.md:11 (markdownlint_MD013)
+308
+Found [Info] `Expected: 80; Actual: 217` in ICSME_REVIEWS.md:23 (markdownlint_MD013)
+309
+Found [Info] `Expected: 1; Actual: 3` in literature_review.md:139 (markdownlint_MD012)
+310
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:2 (markdownlint_MD031)
+311
+Found [Info] `Expected: 80; Actual: 294` in LANGETI.REVIEWS.md:142 (markdownlint_MD013)
+312
+Found [Info] `Expected: 1; Actual: 2` in LANGETI.REVIEWS.md:60 (markdownlint_MD012)
+313
+Found [Info] `Expected: 80; Actual: 100` in literature_review.md:57 (markdownlint_MD013)
+314
+Found [Info] `First line in a file should be a top-level heading` in LANGETI.REVIEWS.md:1 (markdownlint_MD041)
+315
+Found [Info] `Expected: 0 or 2; Actual: 1` in README.md:13 (markdownlint_MD009)
+316
+Found [Info] `Expected: 80; Actual: 400` in LANGETI.REVIEWS.md:85 (markdownlint_MD013)
+317
+Found [Info] `Expected: 80; Actual: 526` in IST_REVIEWS.md:9 (markdownlint_MD013)
+318
+Found [Info] `Expected: 1; Actual: 2` in LANGETI.REVIEWS.md:3 (markdownlint_MD012)
+319
+Found [Info] `Expected: 80; Actual: 106` in LANGETI.REVIEWS.md:52 (markdownlint_MD013)
+320
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:82 (markdownlint_MD022)
+321
+Found [Info] `Expected: 80; Actual: 323` in ICSME_REVIEWS.md:114 (markdownlint_MD013)
+322
+Found [Info] `Lists should be surrounded by blank lines` in LANGETI.REVIEWS.md:138 (markdownlint_MD032)
+323
+Found [Info] `Expected: 1; Actual: 2` in literature_review.md:138 (markdownlint_MD012)
+324
+Found [Info] `Expected: 1; Actual: 2` in LANGETI.REVIEWS.md:11 (markdownlint_MD012)
+325
+Found [Info] `Expected: 80; Actual: 164` in LANGETI.REVIEWS.md:80 (markdownlint_MD013)
+326
+Found [Info] `Expected: 80; Actual: 89` in literature_review.md:127 (markdownlint_MD013)
+327
+Found [Info] `Expected: 80; Actual: 365` in LANGETI.REVIEWS.md:46 (markdownlint_MD013)
+328
+Found [Info] `Expected: 80; Actual: 129` in literature_review.md:136 (markdownlint_MD013)
+329
+Found [Info] `Expected: 80; Actual: 108` in literature_review.md:111 (markdownlint_MD013)
+330
+Found [Info] `Expected: 80; Actual: 148` in ICSME_REVIEWS.md:27 (markdownlint_MD013)
+331
+Found [Info] `Expected: 80; Actual: 124` in LANGETI.REVIEWS.md:91 (markdownlint_MD013)
+332
+Found [Info] `Expected: 80; Actual: 197` in LANGETI.REVIEWS.md:83 (markdownlint_MD013)
+333
+Found [Info] `Expected: 80; Actual: 321` in LANGETI.REVIEWS.md:29 (markdownlint_MD013)
+334
+Found [Info] `Expected: 80; Actual: 213` in LANGETI.REVIEWS.md:87 (markdownlint_MD013)
+335
+Found [Info] `Expected: 80; Actual: 214` in LANGETI.REVIEWS.md:54 (markdownlint_MD013)
+336
+Found [Info] `Expected: 80; Actual: 95` in literature_review.md:112 (markdownlint_MD013)
+337
+Found [Info] `Expected: 80; Actual: 120` in literature_review.md:93 (markdownlint_MD013)
+338
+Found [Info] `Expected: 1; Actual: 2` in ICSME_REVIEWS.md:116 (markdownlint_MD012)
+339
+Found [Info] `Expected: 80; Actual: 102` in LANGETI.REVIEWS.md:141 (markdownlint_MD013)
+340
+Found [Info] `Expected: 80; Actual: 261` in LANGETI.REVIEWS.md:33 (markdownlint_MD013)
+341
+Found [Info] `Expected: 80; Actual: 137` in ICSME_REVIEWS.md:89 (markdownlint_MD013)
+342
+Found [Info] `Expected: 80; Actual: 161` in ICSME_REVIEWS.md:33 (markdownlint_MD013)
+343
+Found [Info] `Expected: 80; Actual: 239` in LANGETI.REVIEWS.md:24 (markdownlint_MD013)
+344
+Found [Info] `Expected: 1; Actual: 2` in ICSME_REVIEWS.md:91 (markdownlint_MD012)
+345
+Found [Info] `Expected: 80; Actual: 239` in ICSME_REVIEWS.md:79 (markdownlint_MD013)
+346
+Found [Info] `Expected: 80; Actual: 138` in literature_review.md:51 (markdownlint_MD013)
+347
+Found [Info] `Expected: 1; Actual: 2` in ICSME_REVIEWS.md:45 (markdownlint_MD012)
+348
+Found [Info] `Expected: 1; Actual: 3` in ICSME_REVIEWS.md:46 (markdownlint_MD012)
+349
+Found [Info] `Expected: 80; Actual: 170` in ICSME_REVIEWS.md:87 (markdownlint_MD013)
+350
+Found [Info] `Expected: 1; Actual: 3` in LANGETI.REVIEWS.md:108 (markdownlint_MD012)
+351
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:135 (markdownlint_MD031)
+352
+Found [Info] `Expected: 1; Actual: 2` in LANGETI.REVIEWS.md:107 (markdownlint_MD012)
+353
+Found [Info] `Expected: 80; Actual: 385` in ICSME_REVIEWS.md:110 (markdownlint_MD013)
+354
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:108 (markdownlint_MD031)
+355
+Found [Info] `Expected: 1; Actual: 2` in LANGETI.REVIEWS.md:69 (markdownlint_MD012)
+356
+Found [Info] `Fenced code blocks should have a language specified` in literature_review.md:108 (markdownlint_MD040)
+357
+Found [Info] `Expected: 80; Actual: 539` in LANGETI.REVIEWS.md:31 (markdownlint_MD013)
+358
+Found [Info] `First line in a file should be a top-level heading` in README.md:1 (markdownlint_MD041)
+359
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:104 (markdownlint_MD031)
+360
+Found [Info] `Expected: 80; Actual: 198` in ICSME_REVIEWS.md:29 (markdownlint_MD013)
+361
+Found [Info] `Expected: 0 or 2; Actual: 1` in README.md:1 (markdownlint_MD009)
+362
+Found [Info] `Lists should be surrounded by blank lines` in ICSME_REVIEWS.md:61 (markdownlint_MD032)
+363
+Found [Info] `Expected: 1; Actual: 3` in ICSME_REVIEWS.md:117 (markdownlint_MD012)
+364
+Found [Info] `Expected: 80; Actual: 147` in LANGETI.REVIEWS.md:140 (markdownlint_MD013)
+365
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:37 (markdownlint_MD022)
+366
+Found [Info] `Expected: 80; Actual: 113` in literature_review.md:28 (markdownlint_MD013)
+367
+Found [Info] `Expected: 0 or 2; Actual: 1` in literature_review.md:22 (markdownlint_MD009)
+368
+Found [Info] `Fenced code blocks should have a language specified` in literature_review.md:38 (markdownlint_MD040)
+369
+Found [Info] `Expected: 80; Actual: 414` in IST_REVIEWS.md:6 (markdownlint_MD013)
+370
+Found [Info] `Lists should be surrounded by blank lines` in ICSME_REVIEWS.md:56 (markdownlint_MD032)
+371
+Found [Info] `Expected: 80; Actual: 337` in ICSME_REVIEWS.md:39 (markdownlint_MD013)
+372
+Found [Info] `Expected: 80; Actual: 95` in literature_review.md:87 (markdownlint_MD013)
+373
+Found [Info] `Fenced code blocks should have a language specified` in literature_review.md:14 (markdownlint_MD040)
+374
+Found [Info] `Expected: 80; Actual: 333` in LANGETI.REVIEWS.md:58 (markdownlint_MD013)
+375
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:107 (markdownlint_MD022)
+376
+Found [Info] `Expected: 80; Actual: 187` in LANGETI.REVIEWS.md:93 (markdownlint_MD013)
+377
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:117 (markdownlint_MD031)
+378
+Found [Info] `Expected: 80; Actual: 168` in ICSME_REVIEWS.md:41 (markdownlint_MD013)
+379
+Found [Info] `Expected: 80; Actual: 109` in LANGETI.REVIEWS.md:65 (markdownlint_MD013)
+380
+Found [Info] `Expected: 80; Actual: 359` in ICSME_REVIEWS.md:19 (markdownlint_MD013)
+381
+Found [Info] `Expected: 80; Actual: 106` in literature_review.md:6 (markdownlint_MD013)
+382
+Found [Info] `Expected: 1; Actual: 2` in LANGETI.REVIEWS.md:35 (markdownlint_MD012)
+383
+Found [Info] `Expected: 1; Actual: 2` in LANGETI.REVIEWS.md:125 (markdownlint_MD012)
+384
+Found [Info] `Expected: 80; Actual: 202` in LANGETI.REVIEWS.md:144 (markdownlint_MD013)
+385
+Found [Info] `Expected: 1; Actual: 2` in LANGETI.REVIEWS.md:146 (markdownlint_MD012)
+386
+Found [Info] `Expected: 80; Actual: 918` in LANGETI.REVIEWS.md:121 (markdownlint_MD013)
+387
+Found [Info] `Expected: 80; Actual: 118` in LANGETI.REVIEWS.md:4 (markdownlint_MD013)
+388
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:124 (markdownlint_MD031)
+389
+Found [Info] `Expected: 80; Actual: 453` in ICSME_REVIEWS.md:15 (markdownlint_MD013)
+390
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:1 (markdownlint_MD022)
+391
+Found [Info] `Expected: 80; Actual: 112` in IST_REVIEWS.md:21 (markdownlint_MD013)
+392
+Found [Info] `Expected: 80; Actual: 97` in literature_review.md:105 (markdownlint_MD013)
+393
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:10 (markdownlint_MD031)
+394
+Found [Info] `Expected: 80; Actual: 124` in ICSME_REVIEWS.md:85 (markdownlint_MD013)
+395
+Found [Info] `Expected: 80; Actual: 909` in IST_REVIEWS.md:17 (markdownlint_MD013)
+396
+Found [Info] `First line in a file should be a top-level heading` in ICSME_REVIEWS.md:1 (markdownlint_MD041)
+397
+Found [Info] `Expected: 1; Actual: 3` in LANGETI.REVIEWS.md:70 (markdownlint_MD012)
+398
+Found [Info] `Expected: 80; Actual: 241` in LANGETI.REVIEWS.md:89 (markdownlint_MD013)
+399
+Found [Info] `Bare URL used` in IST_REVIEWS.md:29 (markdownlint_MD034)
+400
+Found [Info] `Expected: 80; Actual: 106` in literature_review.md:41 (markdownlint_MD013)
+401
+Found [Info] `Expected: 80; Actual: 98` in LANGETI.REVIEWS.md:49 (markdownlint_MD013)
+402
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:55 (markdownlint_MD031)
+403
+Found [Info] `Expected: 80; Actual: 465` in ICSME_REVIEWS.md:43 (markdownlint_MD013)
+404
+Found [Info] `Expected: 80; Actual: 346` in IST_REVIEWS.md:23 (markdownlint_MD013)
+405
+Found [Info] `Expected: 1; Actual: 3` in ICSME_REVIEWS.md:92 (markdownlint_MD012)
+406
+Found [Info] `Expected: 80; Actual: 779` in IST_REVIEWS.md:15 (markdownlint_MD013)
+407
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:79 (markdownlint_MD031)
+408
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:26 (markdownlint_MD031)
+409
+Found [Info] `Expected: 0 or 2; Actual: 1` in README.md:11 (markdownlint_MD009)
+410
+Found [Info] `Expected: 80; Actual: 142` in LANGETI.REVIEWS.md:64 (markdownlint_MD013)
+411
+Found [Info] `Expected: 80; Actual: 338` in LANGETI.REVIEWS.md:135 (markdownlint_MD013)
+412
+Found [Info] `Expected: 80; Actual: 346` in ICSME_REVIEWS.md:10 (markdownlint_MD013)
+413
+Found [Info] `Expected: 80; Actual: 552` in ICSME_REVIEWS.md:17 (markdownlint_MD013)
+414
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:65 (markdownlint_MD031)
+415
+Found [Info] `Expected: 80; Actual: 248` in ICSME_REVIEWS.md:67 (markdownlint_MD013)
+416
+Found [Info] `First line in a file should be a top-level heading` in IST_REVIEWS.md:1 (markdownlint_MD041)
+417
+Found [Info] `Expected: 1; Actual: 2` in ICSME_REVIEWS.md:64 (markdownlint_MD012)
+418
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:13 (markdownlint_MD022)
+419
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:69 (markdownlint_MD031)
+420
+Found [Info] `Expected: 80; Actual: 239` in IST_REVIEWS.md:11 (markdownlint_MD013)
+421
+Found [Info] `Expected: 80; Actual: 245` in ICSME_REVIEWS.md:81 (markdownlint_MD013)
+422
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:25 (markdownlint_MD022)
+423
+Found [Info] `Fenced code blocks should have a language specified` in literature_review.md:124 (markdownlint_MD040)
+424
+Found [Info] `Expected: 80; Actual: 122` in literature_review.md:118 (markdownlint_MD013)
+425
+Found [Info] `Expected: 80; Actual: 220` in ICSME_REVIEWS.md:77 (markdownlint_MD013)
+426
+Found [Info] `Expected: 80; Actual: 399` in ICSME_REVIEWS.md:35 (markdownlint_MD013)
+427
+Found [Info] `Expected: 80; Actual: 107` in literature_review.md:29 (markdownlint_MD013)
+428
+Found [Info] `Expected: 80; Actual: 395` in IST_REVIEWS.md:3 (markdownlint_MD013)
+429
+Found [Info] `Expected: 1; Actual: 2` in ICSME_REVIEWS.md:109 (markdownlint_MD012)
+430
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:21 (markdownlint_MD031)
+431
+Found [Info] `Expected: 80; Actual: 131` in LANGETI.REVIEWS.md:6 (markdownlint_MD013)
+432
+Found [Info] `Expected: 80; Actual: 283` in ICSME_REVIEWS.md:71 (markdownlint_MD013)
+433
+Found [Info] `Expected: 80; Actual: 536` in LANGETI.REVIEWS.md:117 (markdownlint_MD013)
+434
+Found [Info] `Expected: 80; Actual: 298` in ICSME_REVIEWS.md:112 (markdownlint_MD013)
+435
+Found [Info] `Expected: 0 or 2; Actual: 1` in README.md:9 (markdownlint_MD009)
+436
+Found [Info] `Fenced code blocks should have a language specified` in literature_review.md:69 (markdownlint_MD040)
+437
+Found [Info] `Expected: 0 or 2; Actual: 1` in README.md:7 (markdownlint_MD009)
+438
+Found [Info] `Expected: 80; Actual: 553` in LANGETI.REVIEWS.md:123 (markdownlint_MD013)
+439
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:123 (markdownlint_MD022)
+440
+Found [Info] `Expected: 80; Actual: 87` in ICSME_REVIEWS.md:37 (markdownlint_MD013)
+441
+Found [Info] `Bare URL used` in LANGETI.REVIEWS.md:29 (markdownlint_MD034)
+442
+Found [Info] `Expected: 1; Actual: 4` in literature_review.md:140 (markdownlint_MD012)
+443
+Found [Info] `Expected: 80; Actual: 161` in LANGETI.REVIEWS.md:105 (markdownlint_MD013)
+444
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:92 (markdownlint_MD031)
+445
+Found [Info] `Expected: 80; Actual: 353` in LANGETI.REVIEWS.md:137 (markdownlint_MD013)
+446
+Found [Info] `Expected: 80; Actual: 105` in literature_review.md:25 (markdownlint_MD013)
+447
+Found [Info] `Expected: 80; Actual: 100` in ICSME_REVIEWS.md:31 (markdownlint_MD013)
+448
+Found [Info] `Expected: 80; Actual: 212` in ICSME_REVIEWS.md:25 (markdownlint_MD013)
+449
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:96 (markdownlint_MD031)
+450
+Found [Info] `Expected: 1; Actual: 2` in literature_review.md:53 (markdownlint_MD012)
+451
+Found [Info] `Expected: 80; Actual: 566` in ICSME_REVIEWS.md:73 (markdownlint_MD013)
+452
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:120 (markdownlint_MD022)
+453
+Found [Info] `Fenced code blocks should have a language specified` in literature_review.md:2 (markdownlint_MD040)
+454
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:54 (markdownlint_MD022)
+455
+Found [Info] `Expected: 80; Actual: 191` in literature_review.md:22 (markdownlint_MD013)
+456
+Found [Info] `Fenced code blocks should have a language specified` in literature_review.md:26 (markdownlint_MD040)
+457
+Found [Info] `Expected: 80; Actual: 253` in LANGETI.REVIEWS.md:26 (markdownlint_MD013)
+458
+Found [Info] `Expected: 1; Actual: 3` in LANGETI.REVIEWS.md:36 (markdownlint_MD012)
+459
+Found [Info] `Fenced code blocks should have a language specified` in literature_review.md:96 (markdownlint_MD040)
+460
+Found [Info] `Expected: 1; Actual: 3` in LANGETI.REVIEWS.md:126 (markdownlint_MD012)
+461
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:14 (markdownlint_MD031)
+462
+Found [Info] `Expected: 80; Actual: 156` in literature_review.md:5 (markdownlint_MD013)
+463
+Found [Info] `Fenced code blocks should be surrounded by blank lines` in literature_review.md:38 (markdownlint_MD031)
+464
+Found [Info] `Blank line inside blockquote` in README.md:12 (markdownlint_MD028)
+465
+Found [Info] `Fenced code blocks should have a language specified` in literature_review.md:83 (markdownlint_MD040)
+466
+Found [Info] `Expected: 1; Actual: 0; Below` in literature_review.md:68 (markdownlint_MD022)
+467
+Found [Info] `Expected: 80; Actual: 594` in LANGETI.REVIEWS.md:139 (markdownlint_MD013)
+468
+Found [Info] `First line in a file should be a top-level heading` in literature_review.md:1 (markdownlint_MD041)
+469
+Found [Info] `Expected: 80; Actual: 176` in LANGETI.REVIEWS.md:21 (markdownlint_MD013)
+470
+Found [Info] `Expected: 80; Actual: 147` in literature_review.md:99 (markdownlint_MD013)
+471
+Found [Info] `Expected: 1; Actual: 3` in IST_REVIEWS.md:32 (markdownlint_MD012)
+472
+Found [Info] `Expected: 80; Actual: 95` in literature_review.md:17 (markdownlint_MD013)
+473
+Found [Metrics] in .github/workflows/codacy-analysis.yml:
+474
+  LOC - 11
+475
+  CLOC - 0
+476
+Found [Metrics] in LANGETI.REVIEWS.md:
+477
+  LOC - 94
+478
+  CLOC - 0
+479
+Found [Metrics] in ICSME_REVIEWS.md:
+480
+  LOC - 69
+481
+  CLOC - 0
+482
+Found [Metrics] in IST_REVIEWS.md:
+483
+  LOC - 21
+484
+  CLOC - 0
+485
+Found [Metrics] in literature_review.md:
+486
+  LOC - 123
+487
+  CLOC - 0
+488
+Found [Metrics] in README.md:
+489
+  LOC - 7
+490
+  CLOC - 0
+491
+Analysis complete
+492
+Run if [  = true ]; then
+510
+/home/runner/work/_temp/da3d652b-e852-4850-bd04-e19ff710d92b.sh: line 1: [: =: unary operator expected
+511
+Skipping results upload
