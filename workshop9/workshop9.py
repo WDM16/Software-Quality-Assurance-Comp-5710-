@@ -1,3 +1,4 @@
+import logging
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import datasets, linear_model
 import pandas as pd
@@ -7,8 +8,13 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten
 from tensorflow.keras.utils import to_categorical
 
+
 def readData():
     iris = datasets.load_iris()
+    
+    ##initiated logging 
+    logging.basicConfig(filename='app.log', filemode='w', fformat='%(asctime)s:%(iris)s:%(message)s', datefmt='%d-%b-%y %H-%M-%S')
+    
     print(type(iris.data), type(iris.target))
     X = iris.data
     Y = iris.target
@@ -19,6 +25,10 @@ def readData():
 
 def makePrediction():
     iris = datasets.load_iris()
+    
+    ##initiated logging 
+    logging.basicConfig(filename='app.log', filemode='w', fformat='%(asctime)s:%(iris)s:%(message)s', datefmt='%d-%b-%y %H-%M-%S')
+
     knn = KNeighborsClassifier(n_neighbors=6)
     knn.fit(iris['data'], iris['target'])
     X = [
@@ -30,6 +40,10 @@ def makePrediction():
 
 def doRegression():
     diabetes = datasets.load_diabetes()
+
+    ##initiated logging 
+    logging.basicConfig(filename='app.log', filemode='w', fformat='%(asctime)s:%(diabetes)s:%(message)s', datefmt='%d-%b-%y %H-%M-%S')
+
     diabetes_X = diabetes.data[:, np.newaxis, 2]
     diabetes_X_train = diabetes_X[:-20]
     diabetes_X_test = diabetes_X[-20:]
@@ -42,6 +56,11 @@ def doRegression():
 
 def doDeepLearning():
     train_images = mnist.train_images()
+
+    ##initiated logging 
+    logging.basicConfig(filename='app.log', filemode='w', fformat='%(asctime)s:%(train_images)s:%(message)s', datefmt='%d-%b-%y %H-%M-%S')
+
+
     train_labels = mnist.train_labels()
     test_images = mnist.test_images()
     test_labels = mnist.test_labels()
@@ -49,6 +68,10 @@ def doDeepLearning():
 
     train_images = (train_images / 255) - 0.5
     test_images = (test_images / 255) - 0.5
+        
+    ##initiated logging 
+    logging.basicConfig(filename='app.log', filemode='w', fformat='%(asctime)s:%(test_images)s:%(message)s', datefmt='%d-%b-%y %H-%M-%S')
+
 
 
     train_images = np.expand_dims(train_images, axis=3)
@@ -79,6 +102,10 @@ def doDeepLearning():
     epochs=3,
     validation_data=(test_images, to_categorical(test_labels)),
     )
+        
+    ##initiated logging 
+    logging.basicConfig(filename='app.log', filemode='w', fformat='%(asctime)s:%(model.fit)s:%(message)s', datefmt='%d-%b-%y %H-%M-%S')
+
 
     model.save_weights('cnn.h5')
 
@@ -91,6 +118,10 @@ def doDeepLearning():
 
 if __name__=='__main__': 
     data_frame = readData()
+
+    ##initiated logging 
+    logging.basicConfig(filename='app.log', filemode='w', fformat='%(asctime)s:%(data_frame)s:%(message)s', datefmt='%d-%b-%y %H-%M-%S')
+
     makePrediction() 
     doRegression() 
     doDeepLearning() 
